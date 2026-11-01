@@ -1,50 +1,31 @@
+# PERN - Fullstack course (Freecode Camp)
 
-# Node.js & PostgreSQL (javascript-node-postgres)
+## Links
 
-Develop applications in Node.js and PostgreSQL. Includes Node.js, eslint, and yarn in a container linked to a Postgres DB container
+- [Learn the PERN Stack by building a web app - Full video course](https://www.freecodecamp.org/news/learn-the-pern-stack-full-course/)
+- [Youtube](https://www.youtube.com/watch?v=ldYcgPKEZC8)
 
-## Options
 
-| Options Id | Description | Type | Default Value |
-|-----|-----|-----|-----|
-| imageVariant | Node.js version (use -trixie or -bookworm variants on local arm64/Apple Silicon): | string | 24-trixie |
 
-This template references an image that was [pre-built](https://containers.dev/implementors/reference/#prebuilding) to automatically include needed devcontainer.json metadata.
 
-* **Image**: mcr.microsoft.com/devcontainers/javascript-node ([source](https://github.com/devcontainers/images/tree/main/src/javascript-node))
-* **Applies devcontainer.json contents from image**: Yes ([source](https://github.com/devcontainers/images/blob/main/src/javascript-node/.devcontainer/devcontainer.json))
+Here are the best high-quality tutorials and learning resources for combining **TypeScript and Node.js**, categorized by your preferred learning style:
 
-## Using this template
+### 1. Official Documentation (Best for Accuracy)
+*   **[Node.js Official TypeScript Guide](https://nodejs.org "Node.js Learn TypeScript")**: The absolute best place to start. It provides an official, step-by-step introduction to executing TypeScript natively or compiling it for Node.js environments. 
+*   **[The TypeScript Handbook](https://typescriptlang.org "TypeScriptlang Docs")**: The official guide by Microsoft. It includes specific starter project layouts tailored precisely for Node.js and building Command Line Interfaces (CLIs).
 
-This definition creates two containers, one for Node.js and one for PostgreSQL. You will be connected to the Node.js container, and from within that container the PostgreSQL container will be available on **`db`** port 5432. The default database is named `postgres` with a user of `postgres` whose password is `postgres`, and if desired this may be changed in `docker-compose.yml`. Data is stored in a volume named `postgres-data`.
+### 2. Video Tutorials & Project Setups (Best for Practical Application)
+If you prefer building along with an instructor, these top-rated video guides cover modern configurations:
 
-While the definition itself works unmodified, it uses the `mcr.microsoft.com/devcontainers/javascript-node` image which includes `git`, `eslint`, `zsh`, [Oh My Zsh!](https://ohmyz.sh/), a non-root `vscode` user with `sudo` access, and a set of common dependencies for development.
+| Tutorial / Channel | Focus Area | What You Will Learn |
+| :--- | :--- | :--- |
+| **[TypeScript + Express + Node.js Starter Guide](https://youtube.com "TypeScript Express Node Starter")** | Backend Architecture | Building a modern, scalable backend API using Express and TypeScript from scratch. |
+| **[TypeScript for Beginners: Project Setup Guide](https://youtube.com "Node.js TypeScript Project Setup")** | Dev Environment & Tooling | Setting up a production-ready environment with `npm`, `tsconfig.json`, Jest for testing, and ESLint/Prettier. |
+| **[TypeScript Full Course Tutorial (2026)](https://youtube.com "TypeScript Full Course")** | Core Concepts | Managing project dependencies locally using `npm` and handling basic compiler steps. |
 
-You also can connect to PostgreSQL from an external tool when connected to the Dev Contaner from a local tool  by updating `.devcontainer/devcontainer.json` as follows:
+### 3. Interactive & Written Guides (Best for Code-Along)
+*   **[Total TypeScript by Matt Pocock](https://totaltypescript.com "Total TypeScript")**: Highly recommended by the developer community. It offers incredible free, hands-on tutorials specifically geared toward applying strict types to real-world code.
+*   **[VS Code TypeScript Node Tutorial](https://visualstudio.com "Visual Studio Code TypeScript Tutorial")**: A lightweight text tutorial that teaches you how to configure the compiler (`tsc`) and run your first typed "Hello World" app directly inside VS Code.
+*   **[FreeCodeCamp TypeScript Beginners Guide](https://freecodecamp.org "FreeCodeCamp Learn TypeScript")**: A deep-dive article detailing how to structure modules, handle compiler targets, and manage the nuances of Node.js modules.
 
-```json
-"forwardPorts": [ "5432" ]
-```
-
-### Adding another service
-
-You can add other services to your `docker-compose.yml` file [as described in Docker's documentaiton](https://docs.docker.com/compose/compose-file/#service-configuration-reference). However, if you want anything running in this service to be available in the container on localhost, or want to forward the service locally, be sure to add this line to the service config:
-
-```yaml
-# Runs the service on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-network_mode: service:db
-```
-
-### Using the forwardPorts property
-
-By default, web frameworks and tools often only listen to localhost inside the container. As a result, we recommend using the `forwardPorts` property to make these ports available locally.
-
-```json
-"forwardPorts": [9000]
-```
-
-The `ports` property in `docker-compose.yml` [publishes](https://docs.docker.com/config/containers/container-networking/#published-ports) rather than forwards the port. This will not work in a cloud environment like Codespaces and applications need to listen to `*` or `0.0.0.0` for the application to be accessible externally. Fortunately the `forwardPorts` property does not have this limitation.
-
----
-
-_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/devcontainers/templates/blob/main/src/javascript-node-postgres/devcontainer-template.json).  Add additional notes to a `NOTES.md`._
+> "TS is JS with types. The types make JS more tractable... When you can zip around your code base because of the extra compile-time information, it makes it much easier to keep a mental model of the system in one's head." — *Community Consensus via Reddit*
